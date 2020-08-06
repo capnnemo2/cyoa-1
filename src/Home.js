@@ -6,7 +6,10 @@ export default class Home extends React.Component {
 
   handleSubmit = (e) => {
     let userName = e.target.username.value;
+    let userPronouns = e.target.pronouns.value;
     this.context.setUserName(userName);
+    this.context.setUserPronouns(userPronouns);
+    this.props.history.push("/page1");
   };
 
   render() {
@@ -22,7 +25,8 @@ export default class Home extends React.Component {
         </p>
         <p>
           Without further ado, please enter your name (or invent one for your
-          character), and jump into the adventure!
+          character), select the appropriate pronouns, and jump into the
+          adventure!
         </p>
         <form
           onSubmit={(e) => {
@@ -31,8 +35,24 @@ export default class Home extends React.Component {
           }}
         >
           <label>
-            Name: <input type="text" name="username" />
+            Name: <input type="text" name="username" required />
           </label>
+          <br />
+          <label>
+            <input type="radio" name="pronouns" value="she/her" required />
+            she/her
+          </label>
+          <br />
+          <label>
+            <input type="radio" name="pronouns" value="he/him" required />
+            he/him
+          </label>
+          <br />
+          <label>
+            <input type="radio" name="pronouns" value="they/their" required />
+            they/their
+          </label>
+          <br />
           <button type="submit">Begin</button>
         </form>
       </div>
