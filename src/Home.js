@@ -1,6 +1,14 @@
 import React from "react";
+import Context from "./Context";
 
 export default class Home extends React.Component {
+  static contextType = Context;
+
+  handleSubmit = (e) => {
+    let userName = e.target.username.value;
+    this.context.setUserName(userName);
+  };
+
   render() {
     return (
       <div className="Home">
@@ -12,6 +20,21 @@ export default class Home extends React.Component {
           creating an actual game. As such, as the project advances, it may
           eventually blur the line. But to begin, a simple CYOA story!
         </p>
+        <p>
+          Without further ado, please enter your name (or invent one for your
+          character), and jump into the adventure!
+        </p>
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+            this.handleSubmit(e);
+          }}
+        >
+          <label>
+            Name: <input type="text" name="username" />
+          </label>
+          <button type="submit">Begin</button>
+        </form>
       </div>
     );
   }
