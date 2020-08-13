@@ -5,4 +5,12 @@ export default React.createContext({
   pronouns: "",
   setUserName: () => {},
   setUserPronouns: () => {},
+  setSnooze: () => {},
+  setChoice1: () => {},
+  setChoice2: () => {},
+  setChoice3: () => {},
+  snooze: true,
+  choice1: false,
+  choice2: false,
+  choice3: false,
 });

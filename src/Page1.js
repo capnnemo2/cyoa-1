@@ -17,6 +17,7 @@ export default class Page1 extends React.Component {
       this.setState({
         snooze: false,
       });
+      this.context.setSnooze();
       this.renderGetUp();
     }
   };
@@ -35,16 +36,19 @@ export default class Page1 extends React.Component {
       this.setState({
         choice1: true,
       });
+      this.context.setChoice1();
       this.renderSnooze();
     } else if (!this.state.choice2) {
       this.setState({
         choice2: true,
       });
+      this.context.setChoice2();
       this.renderSnooze();
     } else if (!this.state.choice3) {
       this.setState({
         choice3: true,
       });
+      this.context.setChoice3();
       this.renderNoMoSnooze();
     }
   };

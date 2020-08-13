@@ -13,6 +13,11 @@ export default class App extends React.Component {
   state = {
     userName: "",
     pronouns: "",
+
+    snooze: true,
+    choice1: false,
+    choice2: false,
+    choice3: false,
   };
 
   setUserName = (name) => {
@@ -27,12 +32,44 @@ export default class App extends React.Component {
     });
   };
 
+  setSnooze = () => {
+    this.setState({
+      snooze: false,
+    });
+  };
+
+  setChoice1 = () => {
+    this.setState({
+      choice1: true,
+    });
+  };
+
+  setChoice2 = () => {
+    this.setState({
+      choice2: true,
+    });
+  };
+
+  setChoice3 = () => {
+    this.setState({
+      choice3: true,
+    });
+  };
+
   render() {
     const value = {
       userName: this.state.userName,
       pronouns: this.state.pronouns,
       setUserName: this.setUserName,
       setUserPronouns: this.setUserPronouns,
+      setSnooze: this.setSnooze,
+      setChoice1: this.setChoice1,
+      setChoice2: this.setChoice2,
+      setChoice3: this.setChoice3,
+      snooze: this.state.snooze,
+      choice1: this.state.choice1,
+      choice2: this.state.choice2,
+      choice3: this.state.choice3,
     };
     return (
       <Context.Provider value={value}>
