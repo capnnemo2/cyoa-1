@@ -75,8 +75,8 @@ export default class Switches extends React.Component {
         <p>Oh....oh no.</p>
         {!this.context.snooze ? (
           <p>
-            You had to check the manual, but you didn't. Maybe you deserve
-            what's about to happen...
+            You had time to check the manual, but you didn't. Poor choice. Maybe
+            you deserve what's about to happen...
           </p>
         ) : (
           ""

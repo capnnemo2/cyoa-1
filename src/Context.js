@@ -15,4 +15,6 @@ export default React.createContext({
   choice3: false,
   switch: false,
   setFlipSwitch: () => {},
+  coffee: "",
+  setCoffee: () => {},
 });

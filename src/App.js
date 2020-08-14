@@ -21,6 +21,8 @@ export default class App extends React.Component {
     choice3: false,
 
     switch: false,
+
+    coffee: "",
   };
 
   setUserName = (name) => {
@@ -65,6 +67,12 @@ export default class App extends React.Component {
     });
   };
 
+  setCoffee = (coffee) => {
+    this.setState({
+      coffee: coffee,
+    });
+  };
+
   render() {
     const value = {
       userName: this.state.userName,
@@ -81,6 +89,8 @@ export default class App extends React.Component {
       choice3: this.state.choice3,
       switch: this.state.switch,
       setFlipSwitch: this.setFlipSwitch,
+      coffee: this.state.coffee,
+      setCoffee: this.setCoffee,
     };
     return (
       <Context.Provider value={value}>
