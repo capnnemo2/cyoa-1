@@ -2,9 +2,7 @@ import React from "react";
 
 export default React.createContext({
   userName: "",
-  pronouns: "",
   setUserName: () => {},
-  setUserPronouns: () => {},
   setSnooze: () => {},
   setsnooze1: () => {},
   setsnooze2: () => {},

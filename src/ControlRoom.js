@@ -9,10 +9,14 @@ export default class ControlRoom extends React.Component {
   render() {
     const hero = this.context.userName;
     const coffee = this.context.coffee.length;
+    const realCoffee = coffee < 7;
+    const instantCoffee = coffee > 4;
+    const noSnooze = !this.context.snooze1;
+    const oneSnooze = this.context.snooze1 && !this.context.snooze2;
     return hero ? (
       <div className="ControlRoom">
         {/* ZERO SNOOZE BUT NO COFFEE */}
-        {!this.context.snooze1 && !coffee ? (
+        {noSnooze && !coffee ? (
           <div>
             <p>
               "Good morning, {hero}. You have five minutes to manually override
@@ -30,7 +34,7 @@ export default class ControlRoom extends React.Component {
           ""
         )}
         {/* ZERO SNOOZE AND REAL COFFEE */}
-        {!this.context.snooze1 && coffee && coffee < 7 ? (
+        {noSnooze && coffee && realCoffee ? (
           <div>
             <p>
               "Good morning, {hero}. You have five minutes to manually override
@@ -55,7 +59,7 @@ export default class ControlRoom extends React.Component {
           ""
         )}
         {/* ZERO SNOOZE AND INSTANT COFFEE */}
-        {coffee && coffee > 5 ? (
+        {noSnooze && coffee && instantCoffee ? (
           <div>
             <p>
               "Good morning, {hero}. You have two minutes to manually override
@@ -73,6 +77,14 @@ export default class ControlRoom extends React.Component {
           ""
         )}
         {/* ONE SNOOZE AND NO COFFEE */}
+        {oneSnooze && !coffee ? (
+          <div>
+            <p>one snooze and no coffee</p>
+          </div>
+        ) : (
+          ""
+        )}
+
         {/* ONE SNOOZE AND REAL COFFEE */}
         {/* ONE SNOOZE AND INSTANT COFFEE */}
 
@@ -81,7 +93,7 @@ export default class ControlRoom extends React.Component {
         {/* TWO SNOOZE AND INSTANT COFFEE */}
 
         {/* THREE SNOOZE */}
-        {this.context.snooze3 || this.context.coffee.length < 7 ? (
+        {this.context.snooze3 ? (
           <div>
             <p>WAAAAAOOOOOOOEEEEEEIIIIIIAAAAAAA</p>
             <p>"Depressurization will commence in 3 seconds. 3...2..."</p>

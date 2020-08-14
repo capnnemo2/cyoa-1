@@ -12,7 +12,6 @@ export default class App extends React.Component {
 
   state = {
     userName: "",
-    pronouns: "",
     snooze: true,
     snooze1: false,
     snooze2: false,
@@ -24,12 +23,6 @@ export default class App extends React.Component {
   setUserName = (name) => {
     this.setState({
       userName: name,
-    });
-  };
-
-  setUserPronouns = (pronouns) => {
-    this.setState({
-      pronouns: pronouns,
     });
   };
 
@@ -85,9 +78,7 @@ export default class App extends React.Component {
   render() {
     const value = {
       userName: this.state.userName,
-      pronouns: this.state.pronouns,
       setUserName: this.setUserName,
-      setUserPronouns: this.setUserPronouns,
       setSnooze: this.setSnooze,
       setsnooze1: this.setsnooze1,
       setsnooze2: this.setsnooze2,

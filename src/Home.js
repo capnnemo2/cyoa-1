@@ -6,9 +6,7 @@ export default class Home extends React.Component {
 
   handleSubmit = (e) => {
     let userName = e.target.username.value;
-    let userPronouns = e.target.pronouns.value;
     this.context.setUserName(userName);
-    this.context.setUserPronouns(userPronouns);
     this.props.history.push("/RiseNShine");
   };
 
@@ -37,22 +35,7 @@ export default class Home extends React.Component {
           <label>
             Name: <input type="text" name="username" required />
           </label>
-          <br />
-          <label>
-            <input type="radio" name="pronouns" value="she/her" required />
-            she/her
-          </label>
-          <br />
-          <label>
-            <input type="radio" name="pronouns" value="he/him" required />
-            he/him
-          </label>
-          <br />
-          <label>
-            <input type="radio" name="pronouns" value="they/their" required />
-            they/their
-          </label>
-          <br />
+          {"  "}
           <button type="submit">Begin</button>
         </form>
       </div>
