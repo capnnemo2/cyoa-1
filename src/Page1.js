@@ -13,11 +13,13 @@ export default class Page1 extends React.Component {
   };
 
   handleGetUp = () => {
-    if (this.state.snooze) {
+    if (!this.state.choice1) {
       this.setState({
         snooze: false,
       });
       this.context.setSnooze();
+      this.renderGetUp();
+    } else if (this.state.choice1) {
       this.renderGetUp();
     }
   };

@@ -73,6 +73,19 @@ export default class App extends React.Component {
     });
   };
 
+  restart = () => {
+    this.setState({
+      userName: "",
+      pronouns: "",
+      snooze: true,
+      choice1: false,
+      choice2: false,
+      choice3: false,
+      switch: false,
+      coffee: "",
+    });
+  };
+
   render() {
     const value = {
       userName: this.state.userName,
@@ -91,6 +104,7 @@ export default class App extends React.Component {
       setFlipSwitch: this.setFlipSwitch,
       coffee: this.state.coffee,
       setCoffee: this.setCoffee,
+      restart: this.restart,
     };
     return (
       <Context.Provider value={value}>

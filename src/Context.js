@@ -17,4 +17,5 @@ export default React.createContext({
   setFlipSwitch: () => {},
   coffee: "",
   setCoffee: () => {},
+  restart: () => {},
 });
