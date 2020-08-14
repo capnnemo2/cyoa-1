@@ -2,7 +2,7 @@ import React from "react";
 import Context from "./Context";
 import { Link } from "react-router-dom";
 
-export default class Path2a extends React.Component {
+export default class Kitchen extends React.Component {
   static contextType = Context;
 
   state = {
@@ -72,7 +72,7 @@ export default class Path2a extends React.Component {
     const realCoffee = coffee > 0 && coffee < 7;
     const instantCoffee = coffee > 0 && coffee > 4;
     return (
-      <div className="Path2a">
+      <div className="Kitchen">
         <p>
           You definitely need some coffee to kick off the day, but do you want
           to take the time to make the real deal or do you decide to save time

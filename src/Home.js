@@ -9,7 +9,7 @@ export default class Home extends React.Component {
     let userPronouns = e.target.pronouns.value;
     this.context.setUserName(userName);
     this.context.setUserPronouns(userPronouns);
-    this.props.history.push("/page1");
+    this.props.history.push("/RiseNShine");
   };
 
   render() {

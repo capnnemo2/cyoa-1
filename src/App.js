@@ -3,9 +3,9 @@ import { Route, Switch } from "react-router-dom";
 import Context from "./Context";
 import Nav from "./Nav";
 import Home from "./Home";
-import Page1 from "./Page1";
+import RiseNShine from "./RiseNShine";
 import ControlRoom from "./ControlRoom";
-import Path2a from "./Path2a";
+import Kitchen from "./Kitchen";
 
 export default class App extends React.Component {
   static contextType = Context;
@@ -109,9 +109,9 @@ export default class App extends React.Component {
           <Nav />
           <Switch>
             <Route exact path="/" component={Home} />
-            <Route path="/page1" component={Page1} />
+            <Route path="/RiseNShine" component={RiseNShine} />
             <Route path="/control-room" component={ControlRoom} />
-            <Route path="/path2a" component={Path2a} />
+            <Route path="/Kitchen" component={Kitchen} />
           </Switch>
         </div>
       </Context.Provider>

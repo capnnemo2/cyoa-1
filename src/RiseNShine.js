@@ -2,7 +2,7 @@ import React from "react";
 import Context from "./Context";
 import { Link } from "react-router-dom";
 
-export default class Page1 extends React.Component {
+export default class RiseNShine extends React.Component {
   static contextType = Context;
 
   state = {
@@ -28,7 +28,7 @@ export default class Page1 extends React.Component {
         <p>You pull on your onesie and shuffle down the hall.</p>
         <Link to="/control-room">Walk to the control room to begin work</Link>
         <br />
-        <Link to="/path2a">
+        <Link to="/Kitchen">
           Walk to the kitchen for some coffee before heading to the control room
         </Link>
       </div>
@@ -124,7 +124,7 @@ export default class Page1 extends React.Component {
     const snooze2 = this.state.snooze2;
     const snooze3 = this.state.snooze3;
     return hero ? (
-      <div className="Page1">
+      <div className="RiseNShine">
         <p>BEEP! BEEP! BEEP! . . . BEEP! BEEP! BEEP!</p>
         <button
           type="button"
@@ -141,10 +141,16 @@ export default class Page1 extends React.Component {
           Turn off alarm and start the day
         </button>
 
-        <div className="page1-part1">{snooze1 ? this.renderSnooze() : ""}</div>
-        <div className="page1-part2">{snooze2 ? this.renderSnooze2() : ""}</div>
-        <div className="page1-part0">{snooze ? "" : this.renderGetUp()}</div>
-        <div className="page1-part2">
+        <div className="RiseNShine-part1">
+          {snooze1 ? this.renderSnooze() : ""}
+        </div>
+        <div className="RiseNShine-part2">
+          {snooze2 ? this.renderSnooze2() : ""}
+        </div>
+        <div className="RiseNShine-part0">
+          {snooze ? "" : this.renderGetUp()}
+        </div>
+        <div className="RiseNShine-part2">
           {snooze3 ? this.renderNoMoSnooze() : ""}
         </div>
       </div>
