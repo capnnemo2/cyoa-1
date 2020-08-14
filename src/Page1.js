@@ -26,7 +26,7 @@ export default class Page1 extends React.Component {
     return (
       <div>
         <p>You pull on your onesie and shuffle down the hall.</p>
-        <Link to="/path2">Walk to the control room to begin work</Link>
+        <Link to="/control-room">Walk to the control room to begin work</Link>
         <br />
         <Link to="/path2a">
           Walk to the kitchen for some coffee before heading to the control room
@@ -112,7 +112,7 @@ export default class Page1 extends React.Component {
           crap, you leap from bed and run down the hall without stopping to put
           on clothes.
         </p>
-        <Link to="/path1">Run to the control room</Link>
+        <Link to="/control-room">Run to the control room</Link>
       </div>
     );
   };

@@ -26,7 +26,9 @@ export default class Path2a extends React.Component {
               Even just the smell of real coffee perks your brain up. You feel
               ready for the day.
             </p>
-            <Link to="/path2">Whistle and stroll to the control room.</Link>
+            <Link to="/control-room">
+              Whistle and stroll to the control room.
+            </Link>
           </div>
         ) : (
           ""
@@ -36,7 +38,7 @@ export default class Path2a extends React.Component {
           <div>
             <p>WAAAAAOOOOOOOEEEEEEIIIIIIAAAAAAA</p>
             <p>The alarm! You've dawlded and now you're in trouble.</p>
-            <Link to="/path1">Run to the control room</Link>
+            <Link to="/control-room">Run to the control room</Link>
           </div>
         ) : (
           ""
@@ -60,7 +62,7 @@ export default class Path2a extends React.Component {
           We can all agree instant coffee doesn't taste as good, but sometimes
           saving a couple minutes can be a life saver.
         </p>
-        <Link to="/path2">Head to the control room</Link>
+        <Link to="/control-room">Head to the control room</Link>
       </div>
     );
   };

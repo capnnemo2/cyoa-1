@@ -3,14 +3,15 @@ import Context from "./Context";
 import Switches from "./Switches";
 import ManualCheck from "./ManualCheck";
 
-export default class Path2 extends React.Component {
+export default class ControlRoom extends React.Component {
   static contextType = Context;
 
   render() {
     const hero = this.context.userName;
     const coffee = this.context.coffee.length;
     return hero ? (
-      <div className="Path2">
+      <div className="ControlRoom">
+        {/* ZERO SNOOZE BUT NO COFFEE */}
         {!this.context.snooze1 && !coffee ? (
           <div>
             <p>
@@ -28,6 +29,7 @@ export default class Path2 extends React.Component {
         ) : (
           ""
         )}
+        {/* ZERO SNOOZE AND REAL COFFEE */}
         {!this.context.snooze1 && coffee && coffee < 7 ? (
           <div>
             <p>
@@ -52,6 +54,7 @@ export default class Path2 extends React.Component {
         ) : (
           ""
         )}
+        {/* ZERO SNOOZE AND INSTANT COFFEE */}
         {coffee && coffee > 5 ? (
           <div>
             <p>
@@ -64,6 +67,28 @@ export default class Path2 extends React.Component {
               Or maybe you're feeling lucky?
             </p>
             <ManualCheck />
+            <Switches />
+          </div>
+        ) : (
+          ""
+        )}
+        {/* ONE SNOOZE AND NO COFFEE */}
+        {/* ONE SNOOZE AND REAL COFFEE */}
+        {/* ONE SNOOZE AND INSTANT COFFEE */}
+
+        {/* TWO SNOOZE AND NO COFFEE */}
+        {/* TWO SNOOZE AND REAL COFFEE */}
+        {/* TWO SNOOZE AND INSTANT COFFEE */}
+
+        {/* THREE SNOOZE */}
+        {this.context.snooze3 || this.context.coffee.length < 7 ? (
+          <div>
+            <p>WAAAAAOOOOOOOEEEEEEIIIIIIAAAAAAA</p>
+            <p>"Depressurization will commence in 3 seconds. 3...2..."</p>
+            <p>
+              No time! Either the red switch or the blue switch will cancel the
+              automatic depressurization. Choose quickly!
+            </p>
             <Switches />
           </div>
         ) : (

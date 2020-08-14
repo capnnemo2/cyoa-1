@@ -4,8 +4,7 @@ import Context from "./Context";
 import Nav from "./Nav";
 import Home from "./Home";
 import Page1 from "./Page1";
-import Path1 from "./Path1";
-import Path2 from "./Path2";
+import ControlRoom from "./ControlRoom";
 import Path2a from "./Path2a";
 
 export default class App extends React.Component {
@@ -111,8 +110,7 @@ export default class App extends React.Component {
           <Switch>
             <Route exact path="/" component={Home} />
             <Route path="/page1" component={Page1} />
-            <Route path="/path1" component={Path1} />
-            <Route path="/path2" component={Path2} />
+            <Route path="/control-room" component={ControlRoom} />
             <Route path="/path2a" component={Path2a} />
           </Switch>
         </div>
