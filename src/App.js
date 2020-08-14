@@ -6,6 +6,7 @@ import Home from "./Home";
 import Page1 from "./Page1";
 import Path1 from "./Path1";
 import Path2 from "./Path2";
+import Path2a from "./Path2a";
 
 export default class App extends React.Component {
   static contextType = Context;
@@ -18,6 +19,8 @@ export default class App extends React.Component {
     choice1: false,
     choice2: false,
     choice3: false,
+
+    switch: false,
   };
 
   setUserName = (name) => {
@@ -56,6 +59,12 @@ export default class App extends React.Component {
     });
   };
 
+  setFlipSwitch = () => {
+    this.setState({
+      switch: true,
+    });
+  };
+
   render() {
     const value = {
       userName: this.state.userName,
@@ -70,6 +79,8 @@ export default class App extends React.Component {
       choice1: this.state.choice1,
       choice2: this.state.choice2,
       choice3: this.state.choice3,
+      switch: this.state.switch,
+      setFlipSwitch: this.setFlipSwitch,
     };
     return (
       <Context.Provider value={value}>
@@ -81,6 +92,7 @@ export default class App extends React.Component {
             <Route path="/page1" component={Page1} />
             <Route path="/path1" component={Path1} />
             <Route path="/path2" component={Path2} />
+            <Route path="/path2a" component={Path2a} />
           </Switch>
         </div>
       </Context.Provider>

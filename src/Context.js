@@ -13,4 +13,6 @@ export default React.createContext({
   choice1: false,
   choice2: false,
   choice3: false,
+  switch: false,
+  setFlipSwitch: () => {},
 });

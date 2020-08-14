@@ -26,7 +26,11 @@ export default class Page1 extends React.Component {
     return (
       <div>
         <p>You pull on a pair of shorts and shuffle down the hall.</p>
-        <Link to="/path2">Walk to the control room</Link>
+        <Link to="/path2">Walk to the control room to begin work</Link>
+        <br />
+        <Link to="/path2a">
+          Walk to the kitchen for some coffee before heading to the control room
+        </Link>
       </div>
     );
   };
