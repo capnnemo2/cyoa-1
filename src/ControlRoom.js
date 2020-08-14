@@ -81,7 +81,17 @@ export default class ControlRoom extends React.Component {
         {/* ONE SNOOZE AND NO COFFEE */}
         {oneSnooze && !coffee ? (
           <div>
-            <p>one snooze and no coffee</p>
+            <p>
+              "Good morning, {hero}. You have two minutes to manually override
+              the automatic depressurization."
+            </p>
+            <p>
+              Unfortunately, you're drawing a blank and don't remember how to do
+              that. Fortunately, it seems you have two minutes to figure it out.
+              Or maybe you're feeling lucky?
+            </p>
+            <ManualCheck />
+            <Switches />
           </div>
         ) : (
           ""
@@ -107,7 +117,17 @@ export default class ControlRoom extends React.Component {
         {/* ONE SNOOZE AND INSTANT COFFEE */}
         {oneSnooze && instantCoffee ? (
           <div>
-            <p>one snooze and instant coffee</p>
+            <p>
+              "Good morning, {hero}. You have two minutes to manually override
+              the automatic depressurization."
+            </p>
+            <p>
+              Unfortunately, you're drawing a blank and don't remember how to do
+              that. Fortunately, it seems you have two minutes to figure it out.
+              Or maybe you're feeling lucky?
+            </p>
+            <ManualCheck />
+            <Switches />
           </div>
         ) : (
           ""
@@ -115,7 +135,17 @@ export default class ControlRoom extends React.Component {
         {/* TWO SNOOZE AND NO COFFEE */}
         {twoSnooze && !coffee ? (
           <div>
-            <p>two snooze and no coffee</p>
+            <p>
+              "Good morning, {hero}. You have two minutes to manually override
+              the automatic depressurization."
+            </p>
+            <p>
+              Unfortunately, you're drawing a blank and don't remember how to do
+              that. Fortunately, it seems you have two minutes to figure it out.
+              Or maybe you're feeling lucky?
+            </p>
+            <ManualCheck />
+            <Switches />
           </div>
         ) : (
           ""
@@ -123,7 +153,13 @@ export default class ControlRoom extends React.Component {
         {/* TWO SNOOZE AND REAL COFFEE */}
         {twoSnooze && realCoffee ? (
           <div>
-            <p>two snooze and real coffee</p>
+            <p>WAAAAAOOOOOOOEEEEEEIIIIIIAAAAAAA</p>
+            <p>"Depressurization will commence in 3 seconds. 3...2..."</p>
+            <p>
+              No time! Either the red switch or the blue switch will cancel the
+              automatic depressurization. Choose quickly!
+            </p>
+            <Switches />
           </div>
         ) : (
           ""
@@ -131,7 +167,17 @@ export default class ControlRoom extends React.Component {
         {/* TWO SNOOZE AND INSTANT COFFEE */}
         {twoSnooze && instantCoffee ? (
           <div>
-            <p>two snooze and instant coffee</p>
+            <p>
+              "Good morning, {hero}. You have two minutes to manually override
+              the automatic depressurization."
+            </p>
+            <p>
+              Unfortunately, you're drawing a blank and don't remember how to do
+              that. Fortunately, it seems you have two minutes to figure it out.
+              Or maybe you're feeling lucky?
+            </p>
+            <InterruptedManual />
+            <Switches />
           </div>
         ) : (
           ""
