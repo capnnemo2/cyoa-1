@@ -33,7 +33,14 @@ export default class Kitchen extends React.Component {
         ) : (
           ""
         )}
-        {!this.context.snooze2 ? <div></div> : ""}
+        {this.context.snooze1 && !this.context.snooze2 ? (
+          <div>
+            <p>Ah, coffee is great. Now the day can start.</p>
+            <Link to="/control-room">Walk to the control room.</Link>
+          </div>
+        ) : (
+          ""
+        )}
         {this.context.snooze2 && !this.context.snooze3 ? (
           <div>
             <p>WAAAAAOOOOOOOEEEEEEIIIIIIAAAAAAA</p>

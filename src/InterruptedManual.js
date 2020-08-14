@@ -4,6 +4,10 @@ import Context from "./Context";
 export default class InterruptedManual extends React.Component {
   static contextType = Context;
 
+  state = {
+    manual: false,
+  };
+
   handleCheckManual = () => {
     this.setState({
       manual: true,
@@ -33,6 +37,7 @@ export default class InterruptedManual extends React.Component {
   };
 
   render() {
+    const manual = this.state.manual;
     return (
       <div className="InterruptedManual">
         <button
