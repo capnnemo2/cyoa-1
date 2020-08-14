@@ -24,6 +24,17 @@ export default class Switches extends React.Component {
           "Depressurization manual override confirmed. Good morning,{" "}
           {this.context.userName}. It is your 936th day on the SS Eggpod."
         </p>
+        {!this.context.snooze1 &&
+        this.context.coffee.length &&
+        this.context.coffee.length < 7 ? (
+          <p>
+            You kick your feet up on the console and sip your coffee. Day 936 is
+            going to be a good day.
+          </p>
+        ) : (
+          ""
+        )}
+
         <p>
           Whew! Relieved, you slump into the chair and take a moment to
           appreciate that you aren't dead yet today. Day 936 is off to a rocky
@@ -31,7 +42,7 @@ export default class Switches extends React.Component {
           day. There is light at the end of the tunnel, however: you only have
           to survive until Day 1000 to be able to go home.
         </p>
-        {!this.context.snooze ? (
+        {!this.context.snooze && !this.context.coffee.length ? (
           <div>
             <p>Relaxed, you head to the kitchen to make some coffee</p>
             <p>
@@ -42,7 +53,7 @@ export default class Switches extends React.Component {
         ) : (
           ""
         )}
-        {this.context.choice3 ? (
+        {this.context.snooze3 ? (
           <div>
             <p>Still naked, you walk to the kitchen to make some coffee.</p>
             <p>
@@ -81,7 +92,7 @@ export default class Switches extends React.Component {
         ) : (
           ""
         )}
-        {this.context.choice3 ? (
+        {this.context.snooze3 ? (
           <p>
             You just had to hit snooze three times, didn't you. Your brain just
             didn't have enough time to wake up enough to make good decisions.

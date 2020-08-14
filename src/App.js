@@ -14,14 +14,11 @@ export default class App extends React.Component {
   state = {
     userName: "",
     pronouns: "",
-
     snooze: true,
-    choice1: false,
-    choice2: false,
-    choice3: false,
-
+    snooze1: false,
+    snooze2: false,
+    snooze3: false,
     switch: false,
-
     coffee: "",
   };
 
@@ -43,21 +40,21 @@ export default class App extends React.Component {
     });
   };
 
-  setChoice1 = () => {
+  setsnooze1 = () => {
     this.setState({
-      choice1: true,
+      snooze1: true,
     });
   };
 
-  setChoice2 = () => {
+  setsnooze2 = () => {
     this.setState({
-      choice2: true,
+      snooze2: true,
     });
   };
 
-  setChoice3 = () => {
+  setsnooze3 = () => {
     this.setState({
-      choice3: true,
+      snooze3: true,
     });
   };
 
@@ -78,9 +75,9 @@ export default class App extends React.Component {
       userName: "",
       pronouns: "",
       snooze: true,
-      choice1: false,
-      choice2: false,
-      choice3: false,
+      snooze1: false,
+      snooze2: false,
+      snooze3: false,
       switch: false,
       coffee: "",
     });
@@ -93,13 +90,13 @@ export default class App extends React.Component {
       setUserName: this.setUserName,
       setUserPronouns: this.setUserPronouns,
       setSnooze: this.setSnooze,
-      setChoice1: this.setChoice1,
-      setChoice2: this.setChoice2,
-      setChoice3: this.setChoice3,
+      setsnooze1: this.setsnooze1,
+      setsnooze2: this.setsnooze2,
+      setsnooze3: this.setsnooze3,
       snooze: this.state.snooze,
-      choice1: this.state.choice1,
-      choice2: this.state.choice2,
-      choice3: this.state.choice3,
+      snooze1: this.state.snooze1,
+      snooze2: this.state.snooze2,
+      snooze3: this.state.snooze3,
       switch: this.state.switch,
       setFlipSwitch: this.setFlipSwitch,
       coffee: this.state.coffee,

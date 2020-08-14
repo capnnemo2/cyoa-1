@@ -9,7 +9,7 @@ export default class Path1 extends React.Component {
     const hero = this.context.userName;
     return hero ? (
       <div className="Path1">
-        {this.context.choice3 || this.context.coffee.length < 7 ? (
+        {this.context.snooze3 || this.context.coffee.length < 7 ? (
           <div>
             <p>WAAAAAOOOOOOOEEEEEEIIIIIIAAAAAAA</p>
             <p>"Depressurization will commence in 3 seconds. 3...2..."</p>

@@ -7,19 +7,17 @@ export default class Page1 extends React.Component {
 
   state = {
     snooze: true,
-    choice1: false,
-    choice2: false,
-    choice3: false,
+    snooze1: false,
+    snooze2: false,
+    snooze3: false,
   };
 
   handleGetUp = () => {
-    if (!this.state.choice1) {
+    if (this.state.snooze) {
       this.setState({
         snooze: false,
       });
       this.context.setSnooze();
-      this.renderGetUp();
-    } else if (this.state.choice1) {
       this.renderGetUp();
     }
   };
@@ -27,7 +25,7 @@ export default class Page1 extends React.Component {
   renderGetUp = () => {
     return (
       <div>
-        <p>You pull on a pair of shorts and shuffle down the hall.</p>
+        <p>You pull on your onesie and shuffle down the hall.</p>
         <Link to="/path2">Walk to the control room to begin work</Link>
         <br />
         <Link to="/path2a">
@@ -38,23 +36,23 @@ export default class Page1 extends React.Component {
   };
 
   handleSnooze = () => {
-    if (!this.state.choice1) {
+    if (!this.state.snooze1) {
       this.setState({
-        choice1: true,
+        snooze1: true,
       });
-      this.context.setChoice1();
+      this.context.setsnooze1();
       this.renderSnooze();
-    } else if (!this.state.choice2) {
+    } else if (!this.state.snooze2) {
       this.setState({
-        choice2: true,
+        snooze2: true,
       });
-      this.context.setChoice2();
+      this.context.setsnooze2();
       this.renderSnooze2();
-    } else if (!this.state.choice3) {
+    } else if (!this.state.snooze3) {
       this.setState({
-        choice3: true,
+        snooze3: true,
       });
-      this.context.setChoice3();
+      this.context.setsnooze3();
       this.renderNoMoSnooze();
     }
   };
@@ -67,14 +65,14 @@ export default class Page1 extends React.Component {
         <button
           type="button"
           onClick={(e) => this.handleSnooze()}
-          disabled={this.state.choice2 ? true : false}
+          disabled={this.state.snooze2 ? true : false}
         >
           Hit snooze
         </button>
         <button
           type="button"
           onClick={() => this.handleGetUp()}
-          disabled={this.state.choice2 ? true : false}
+          disabled={this.state.snooze2 ? true : false}
         >
           Turn off alarm and start the day
         </button>
@@ -90,14 +88,14 @@ export default class Page1 extends React.Component {
         <button
           type="button"
           onClick={(e) => this.handleSnooze()}
-          disabled={this.state.choice3 ? true : false}
+          disabled={this.state.snooze3 ? true : false}
         >
           Hit snooze
         </button>
         <button
           type="button"
           onClick={() => this.handleGetUp()}
-          disabled={this.state.choice3 ? true : false}
+          disabled={this.state.snooze3 ? true : false}
         >
           Turn off alarm and start the day
         </button>
@@ -122,32 +120,32 @@ export default class Page1 extends React.Component {
   render() {
     const hero = this.context.userName;
     const snooze = this.state.snooze;
-    const choice1 = this.state.choice1;
-    const choice2 = this.state.choice2;
-    const choice3 = this.state.choice3;
+    const snooze1 = this.state.snooze1;
+    const snooze2 = this.state.snooze2;
+    const snooze3 = this.state.snooze3;
     return hero ? (
       <div className="Page1">
         <p>BEEP! BEEP! BEEP! . . . BEEP! BEEP! BEEP!</p>
         <button
           type="button"
           onClick={() => this.handleSnooze()}
-          disabled={choice1 ? true : false}
+          disabled={snooze1 ? true : false}
         >
           Hit snooze
         </button>
         <button
           type="button"
           onClick={() => this.handleGetUp()}
-          disabled={choice1 ? true : false}
+          disabled={snooze1 ? true : false}
         >
           Turn off alarm and start the day
         </button>
 
-        <div className="page1-part1">{choice1 ? this.renderSnooze() : ""}</div>
-        <div className="page1-part2">{choice2 ? this.renderSnooze2() : ""}</div>
+        <div className="page1-part1">{snooze1 ? this.renderSnooze() : ""}</div>
+        <div className="page1-part2">{snooze2 ? this.renderSnooze2() : ""}</div>
         <div className="page1-part0">{snooze ? "" : this.renderGetUp()}</div>
         <div className="page1-part2">
-          {choice3 ? this.renderNoMoSnooze() : ""}
+          {snooze3 ? this.renderNoMoSnooze() : ""}
         </div>
       </div>
     ) : (
